@@ -19,9 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!%!w4&d*xatb6xe$=msf0e&d@93z58$tk7b-4vnj!97m2w=!eg'
+# NOTE: Updated in later commits
+SECRET_KEY = 'abc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# NOTE: Still in production soo...
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -73,10 +75,12 @@ WSGI_APPLICATION = 'portf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {    #Lets play around with the database ---> NOTE: runserver error here...
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfdb',
+        'USER': 'postgres',     # later you'll need to add new users with different permissions
+
     }
 }
 
