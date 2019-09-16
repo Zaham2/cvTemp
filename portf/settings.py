@@ -73,7 +73,11 @@ WSGI_APPLICATION = 'portf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-import psycopg2.extensions
+# ABOUT DATABASES:
+
+# after you switch database and fill in its attributes... you need to
+# 1- re-makemigrations migrate for the new database
+# 2- create a new superuser for the new database
 
 DATABASES = {  # Lets play around with the database ---> NOTE: runserver error here...
     'default': {
@@ -84,9 +88,6 @@ DATABASES = {  # Lets play around with the database ---> NOTE: runserver error h
         'PASSWORD': '123',  # Zaham: Shouldn't hardcode passwords :)
         'HOST': '127.0.0.1',
         'PORT': '5432',
-        'OPTIONS': {
-            'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
-        },
 
     }
 }
